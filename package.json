@@ -16,6 +16,7 @@
     "mongoose": "^5.11.15",
     "nodemon": "^2.0.7",
     "short-uuid": "^4.1.0",
+    "uuid": "^8.3.2",
     "validator": "^13.5.2"
   }
 }

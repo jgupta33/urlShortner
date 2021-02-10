@@ -4,7 +4,7 @@ const UrlModel = require("../models/urlModel");
 
 const Base = async (req, res) => {
   const databaseURL = await UrlModel.find({ });
-  res.json(databaseURL);
+  res.json((databaseURL));
 };
 
 const Redirect = async (req, res) => {
@@ -41,6 +41,8 @@ const AddUrl = async (req, res) => {
     if (!doc) 
     {
       let newURL = new UrlModel({ url });
+
+      console.log(newURL);
       await newURL.save();
       const InsertedURLResponse={  url :url, urlHash: newURL.hash, shortUrl: process.env.BASE_URL + newURL.hash }
       console.log("URL is Inserted, URL response :: " , InsertedURLResponse);
