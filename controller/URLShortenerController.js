@@ -4,7 +4,7 @@ const UrlModel = require("../models/urlModel");
 
 const Base = async (req, res) => {
   const databaseURL = await UrlModel.find({ });
-  res.send(databaseURL);
+  res.json(databaseURL);
 };
 
 const Redirect = async (req, res) => {
