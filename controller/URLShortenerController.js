@@ -3,7 +3,8 @@ const UrlModel = require("../models/urlModel");
 
 
 const Base = async (req, res) => {
-  res.send("Welcome to URL Shortening App.");
+  const databaseURL = await UrlModel.find({ });
+  res.send(databaseURL);
 };
 
 const Redirect = async (req, res) => {
