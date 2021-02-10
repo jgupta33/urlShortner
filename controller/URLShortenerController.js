@@ -10,6 +10,8 @@ const Redirect = async (req, res) => {
   try {
     const doc = await UrlModel.findOne({ hash });
     if (!doc) return res.status(400).json({ message: "URL is Invalid or not exists" });
+    console.log(" Redirection Url :: " ,doc.url);
+
     return res.status(302).redirect(doc.url);
   } catch (error) {
     console.error(error);
