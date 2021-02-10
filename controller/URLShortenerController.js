@@ -1,6 +1,11 @@
 const validator = require("validator");
 const UrlModel = require("../models/urlModel");
 
+
+const Base = async (req, res) => {
+  res.send("Welcome to URL Shortening App.");
+};
+
 const Redirect = async (req, res) => {
   const {hash}  = req.params;
   console.log("Requested Hash is :: " ,hash);
@@ -51,4 +56,4 @@ const AddUrl = async (req, res) => {
   }
 };
 
-module.exports = {Redirect,AddUrl,};
+module.exports = {Redirect,AddUrl,Base};

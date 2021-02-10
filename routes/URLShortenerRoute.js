@@ -1,8 +1,9 @@
 const express = require("express");
 const router = express.Router();
-const { Redirect, AddUrl } = require("../controller/URLShortenerController");
+const { Redirect, AddUrl, Base } = require("../controller/URLShortenerController");
 
-router.get("/:hash", Redirect);  // GET Endpoint to fetch the 
+router.get("/", Base);  // Base URL
+router.get("/:hash", Redirect);  // GET Endpoint to fetch the hash link
 router.post("/links", AddUrl); // POST Endpoint to add the URL and shortned
 
 module.exports = router;
